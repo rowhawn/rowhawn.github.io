@@ -10,13 +10,31 @@
     <header>
         <h1>Rohan Pathare</h1>
     </header>
-    <section>
-        <h2>About Me</h2>
+
+    <div class="tabs">
+        <button class="tab-link" data-tab="tab1">About</button>
+        <button class="tab-link" data-tab="tab2">CV</button>
+        <button class="tab-link" data-tab="tab3">Portfolio</button>
+    </div>
+    
+    <div id="tab1" class="tab-content">
+        <h2>About</h2>
         <p>Hello! I'm Rohan Pathare. Welcome to my personal website.</p>
-    </section>
-    <section>
-        <h2>Contact</h2>
-        <p>Email: rowhawn@gmail.com</p>
-    </section>
+        <section>
+            <h3>Contact</h3>
+            <p>Email: rowhawn@gmail.com</p>
+        </section>
+    </div>
+    <div id="tab2" class="tab-content">
+        <h2>CV</h2>
+        <p>This is the content for Tab 2.</p>
+    </div>
+    <div id="tab3" class="tab-content">
+        <h2>Portfolio</h2>
+        <p>This is the content for Tab 3.</p>
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
