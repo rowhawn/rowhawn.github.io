@@ -48,6 +48,16 @@ header {
     border-radius: 8px;
 }
 
+#tab-about {
+    background-image: url('resources/headshot.jpeg'); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: #ffffff; /* Ensure text is visible on your headshot */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Improve text readability */
+}
+
 section {
     background: #333;
     color: #fff;
