@@ -56,6 +56,7 @@ header {
     position: relative;
     color: #ffffff; /* Ensure text is visible on your headshot */
     text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Improve text readability */
+    padding: 100px;
 }
 
 section {
