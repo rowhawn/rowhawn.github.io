@@ -19,3 +19,4 @@ languageCode = "en-us"
   name = "portfolio/"
   url = "portfolio/"
   
+  mainSections = ["about"]
