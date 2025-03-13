@@ -1,0 +1,4 @@
+baseURL = 'https://rowhawn.github.io/'
+languageCode = 'en-us'
+title = 'Rohan Pathare'
+theme = 'ananke'
