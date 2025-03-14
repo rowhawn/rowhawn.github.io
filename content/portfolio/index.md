@@ -24,3 +24,7 @@ This piece reimagines the illuminated manuscript beyond its Western European fra
 ## Music Video: Ravi S. - Splash Page (2025)
 {{< youtube sMJgnGYJZbY >}}
 <br />
+
+## Every Bus Stop Baltimore (2025)
+{{< bluesky link="https://bsky.app/profile/bmore-bus-skeets.bsky.social/post/3ljgnbh5qgv2k" >}}
+An automated application which uses the OpenBaltimore API to generate a list of all the bus stops in Baltimore City, posted hourly with a Google Maps Street View image, in order to create a visual archive of the city's public transportation infrastructure. Using the Bluesky API, users are able to interact with the data, and add their own images and comments to the archive.
