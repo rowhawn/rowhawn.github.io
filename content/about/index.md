@@ -12,4 +12,6 @@ Rohan Pathare is an Indian-American video artist, musician and photographer livi
 
 # Contact
 
-Email: [rowhawn@gmail.com](mailto:rowhawn@gmail.com)
+Email: [rowhawn@gmail.com](mailto:rowhawn@gmail.com)\
+Instagram: [@oh.i.died](https://www.instagram.com/oh.i.died/)\
+Bluesky: [@ohidied.bsky.social](https://bsky.app/profile/ohidied.bsky.social)
