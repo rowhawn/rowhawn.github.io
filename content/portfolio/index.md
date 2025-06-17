@@ -17,6 +17,10 @@ title = 'Portfolio'
 This piece reimagines the illuminated manuscript beyond its Western European framework, drawing from the syncretic traditions of 16th-century Mughal India, where Islamic aesthetics were employed to depict Hindu mythology. In contrast to today’s narratives of cultural erasure, this work explores historical hybridity as an alternative to colonization. The evolving generative video, shaped in real-time by Robin Rhodes’ improvised double bass performance, resists fixity—mirroring identity’s fluid, rebellious nature. In a world that demands rigid definitions, this piece revels in impermanence, coincidence, and friendly tension.
 <br />
 
+## Integrity, et cetera et cetera (2025)
+{{< youtube TP-A6JwF-Ik >}}
+<br />
+
 ## Seeing From All Sides (2022)
 {{< youtube -XSeesxpMmE >}}
 <br />
