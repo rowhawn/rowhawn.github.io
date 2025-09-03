@@ -18,9 +18,5 @@ languageCode = "en-us"
   [[params.navlinks]]
   name = "portfolio/"
   url = "portfolio/"
-
-  [[params.navlinks]]
-  name = "frequencies-in-transit/"
-  url = "frequencies-in-transit/"
-
+  
   mainSections = ["about"]
