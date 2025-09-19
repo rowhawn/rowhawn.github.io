@@ -4,8 +4,9 @@ draft = false
 title = 'Frequencies in Transit'
 +++
 
+## Instructional Zine
 {{< image-gallery gallery_dir="/frequencies-in-transit/zine" >}}
 
-
+## Performance Stills
 {{< image-gallery gallery_dir="/frequencies-in-transit/photos" >}}
 
