@@ -9,8 +9,9 @@ title = 'Portfolio'
 <br />
 
 ## [Frequencies in Transit (2025)](https://rowhawn.github.io/frequencies-in-transit/)
-A performance and sound piece created as High Jinx, a part of the High Zero Festival. 
 
+{{< youtube rlGDL7vnc6w>}}
+A participatory performance and sound piece for FM transmitters and portable radios.  Created for High Jinx, a part of the [High Zero Festival](https://highzero.org/).
 
 ## The Red Room As It Existed (2024)
 {{< youtube jfrYPWILh_s >}}
