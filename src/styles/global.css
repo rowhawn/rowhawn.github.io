@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+  body {
+    @apply bg-sage-50 text-sage-900 dark:bg-sage-950 dark:text-sage-100;
+    /* Soft gray-green bloom — visible but quiet */
+    background-image: radial-gradient(
+      100% 55% at 50% 0%,
+      rgb(214 226 216 / 0.35),
+      transparent 72%
+    );
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-image: radial-gradient(
+        90% 50% at 50% 0%,
+        rgb(61 84 72 / 0.22),
+        transparent 70%
+      );
+    }
+  }
+  main a:not([class]) {
+    @apply text-lichen-deep underline decoration-sage-300/70 underline-offset-[3px] transition-colors hover:text-lichen hover:decoration-lichen/50 dark:text-lichen-muted dark:decoration-sage-600 dark:hover:text-sage-200 dark:hover:decoration-sage-400/60;
+  }
+}
+
+@layer components {
+  .mdx-content :where(h1, h2, h3, h4) {
+    @apply font-semibold tracking-tight text-sage-900 dark:text-sage-50;
+  }
+  .mdx-content h1 {
+    @apply mt-8 text-2xl sm:text-3xl;
+  }
+  .mdx-content h2 {
+    @apply mt-10 border-b border-sage-200/90 pb-1.5 text-lg dark:border-sage-700/80;
+  }
+  .mdx-content h3 {
+    @apply mt-8 text-base;
+  }
+  .mdx-content p {
+    @apply my-3.5 text-sage-700 dark:text-sage-300;
+  }
+  .mdx-content ul {
+    @apply my-3.5 list-disc pl-5 text-sage-700 marker:text-sage-400 dark:text-sage-300 dark:marker:text-sage-600;
+  }
+  .mdx-content img {
+    @apply my-6 max-h-[min(70vh,32rem)] w-auto max-w-full rounded-sm border border-sage-200/90 object-contain dark:border-sage-700/80;
+  }
+}

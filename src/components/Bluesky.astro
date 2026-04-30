@@ -1,0 +1,22 @@
+---
+import { fetchBlueskyOembedHtml } from "../lib/bluesky-oembed";
+
+interface Props {
+  url: string;
+}
+const { url } = Astro.props;
+const html = await fetchBlueskyOembedHtml(url);
+---
+
+{
+  html ? (
+    <div class="bluesky-embed my-6 max-w-2xl [&_iframe]:max-w-full" set:html={html} />
+  ) : (
+    <p class="my-6 rounded-sm border border-sage-300/70 bg-sage-100/90 p-3.5 text-[13px] text-sage-800 dark:border-sage-700 dark:bg-sage-900/60 dark:text-sage-200">
+      Bluesky embed could not be loaded.{" "}
+      <a href={url} class="font-medium">
+        Open post
+      </a>
+    </p>
+  )
+}

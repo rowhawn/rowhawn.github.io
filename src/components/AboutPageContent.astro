@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+
+import headshot from "../assets/about/headshot.jpeg";
+---
+
+<p>
+  Rohan Pathare is an Indian-American video artist, musician and photographer living in Baltimore,
+  MD. His work involves interactivity, emotional responsiveness and chance.
+</p>
+
+<Image
+  src={headshot}
+  alt="Rohan Pathare"
+  widths={[400, 720, 960]}
+  sizes="(max-width: 640px) 100vw, 480px"
+  class="rounded-sm border border-sage-200/90 dark:border-sage-700/80"
+/>
+
+<h2 id="contact">Contact</h2>
+
+<p>
+  Email: <a href="mailto:rowhawn@gmail.com">rowhawn@gmail.com</a>
+</p>
+<p>
+  Instagram: <a href="https://www.instagram.com/oh.i.died/">@oh.i.died</a>
+</p>
+<p>
+  Bluesky: <a href="https://bsky.app/profile/ohidied.bsky.social">@ohidied.bsky.social</a>
+</p>
