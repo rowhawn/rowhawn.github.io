@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://rowhawn.github.io",
+  site: "https://rohanpathare.com",
   base: "/",
   trailingSlash: "always",
   output: "static",
