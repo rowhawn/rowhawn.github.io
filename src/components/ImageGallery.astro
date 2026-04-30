@@ -1,0 +1,72 @@
+---
+import { getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  /** Subfolder under `src/assets/frequencies-in-transit/` */
+  subdir: "zine" | "photos";
+}
+
+const { subdir } = Astro.props;
+
+const modules = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/frequencies-in-transit/**/*.jpg",
+  { eager: true }
+);
+
+const needle = `frequencies-in-transit/${subdir}/`;
+const entries = Object.entries(modules)
+  .filter(([path]) => path.includes(needle))
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }));
+
+const items = await Promise.all(
+  entries.map(async ([path, mod]) => {
+    const base = path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "image";
+    const thumb = await getImage({
+      src: mod.default,
+      width: 400,
+      format: "jpeg",
+      quality: 72,
+    });
+    const full = await getImage({
+      src: mod.default,
+      width: 1600,
+      format: "jpeg",
+      quality: 78,
+    });
+    return { base, thumbSrc: thumb.src, fullSrc: full.src, alt: base.replace(/_/g, " ") };
+  })
+);
+---
+
+{
+  items.length === 0 ? (
+    <p class="text-[13px] text-sage-500 dark:text-sage-500">No images found for this gallery.</p>
+  ) : (
+    <ul class="my-6 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 md:grid-cols-4">
+      {items.map((item) => (
+        <li class="m-0 overflow-hidden rounded-sm border border-sage-200/80 bg-sage-50/80 dark:border-sage-800/60 dark:bg-sage-900/40">
+          <a
+            href={item.fullSrc}
+            class="block no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={item.thumbSrc}
+              alt={item.alt}
+              width={400}
+              height={400}
+              loading="lazy"
+              decoding="async"
+              class="aspect-square w-full object-cover"
+            />
+            <span class="block truncate px-1 py-1 text-center text-[11px] text-sage-500 dark:text-sage-500">
+              {item.alt}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}

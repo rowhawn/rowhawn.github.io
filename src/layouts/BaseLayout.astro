@@ -1,0 +1,130 @@
+---
+import "../styles/global.css";
+
+type Frontmatter = {
+  title?: string;
+  description?: string;
+  image?: string;
+};
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  /** Set by Astro when this layout is used from MDX `layout` frontmatter */
+  frontmatter?: Frontmatter;
+}
+
+const props = Astro.props;
+const fm = props.frontmatter ?? {};
+const pageTitle = props.title ?? fm.title;
+const description =
+  props.description ??
+  fm.description ??
+  "Video artist, musician, and photographer based in Baltimore, MD.";
+const ogImage = props.image ?? fm.image;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const fullTitle = pageTitle ? `${pageTitle} · Rohan Pathare` : "Rohan Pathare";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+  </head>
+  <body
+    class="min-h-dvh flex flex-col font-sans text-[15px] leading-[1.65] tracking-[-0.01em] text-sage-800 dark:text-sage-200"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-sm focus:border focus:border-sage-300 focus:bg-sage-100 focus:px-2.5 focus:py-1.5 focus:text-sage-900 dark:focus:border-sage-600 dark:focus:bg-sage-900 dark:focus:text-sage-100"
+      >Skip to content</a
+    >
+    <header class="border-b border-sage-200/60 dark:border-sage-800/50">
+      <div
+        class="mx-auto flex max-w-2xl flex-wrap items-baseline justify-between gap-x-6 gap-y-2 px-4 py-4 sm:px-5"
+      >
+        <a
+          href="/"
+          class="text-[15px] font-medium tracking-tight text-sage-900 no-underline hover:text-lichen-deep dark:text-sage-100 dark:hover:text-lichen-muted"
+          >Rohan Pathare</a
+        >
+        <nav aria-label="Primary" class="text-[13px] text-sage-500 dark:text-sage-500">
+          <ul class="m-0 flex list-none flex-wrap gap-x-1 p-0">
+            <li class="m-0 flex items-center gap-x-1">
+              <a
+                href="/about/"
+                class="text-sage-600 no-underline hover:text-sage-900 dark:text-sage-400 dark:hover:text-sage-100"
+                >about</a
+              ><span class="select-none text-sage-300 dark:text-sage-700" aria-hidden="true">/</span>
+            </li>
+            <li class="m-0 flex items-center gap-x-1">
+              <a
+                href="/cv/"
+                class="text-sage-600 no-underline hover:text-sage-900 dark:text-sage-400 dark:hover:text-sage-100"
+                >cv</a
+              ><span class="select-none text-sage-300 dark:text-sage-700" aria-hidden="true">/</span>
+            </li>
+            <li class="m-0 flex items-center gap-x-1">
+              <a
+                href="/portfolio/"
+                class="text-sage-600 no-underline hover:text-sage-900 dark:text-sage-400 dark:hover:text-sage-100"
+                >portfolio</a
+              ><span class="select-none text-sage-300 dark:text-sage-700" aria-hidden="true">/</span>
+            </li>
+            <li class="m-0 relative">
+              <details class="group">
+                <summary
+                  class="cursor-pointer list-none text-sage-600 marker:content-none hover:text-sage-900 dark:text-sage-400 dark:hover:text-sage-100 [&::-webkit-details-marker]:hidden"
+                >
+                  projects<span class="ml-0.5 text-[10px] text-sage-400 opacity-80 dark:text-sage-500" aria-hidden="true"
+                    >▾</span
+                  >
+                </summary>
+                <ul
+                  class="absolute right-0 top-full z-50 mt-1.5 min-w-[12.5rem] list-none rounded-md border border-sage-200/90 bg-sage-50/95 p-1 shadow-md dark:border-sage-700/80 dark:bg-sage-900/95 m-0 backdrop-blur-sm"
+                  role="list"
+                >
+                  <li class="m-0">
+                    <a
+                      href="/projects/fairy-ring/"
+                      class="block rounded px-2.5 py-1.5 text-sage-600 no-underline hover:bg-sage-200/60 hover:text-sage-900 dark:text-sage-400 dark:hover:bg-sage-800/60 dark:hover:text-sage-100"
+                      >Fairy Ring</a
+                    >
+                  </li>
+                  <li class="m-0">
+                    <a
+                      href="/projects/frequencies-in-transit/"
+                      class="block rounded px-2.5 py-1.5 text-sage-600 no-underline hover:bg-sage-200/60 hover:text-sage-900 dark:text-sage-400 dark:hover:bg-sage-800/60 dark:hover:text-sage-100"
+                      >Frequencies in Transit</a
+                    >
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="mx-auto w-full max-w-2xl flex-1 px-4 py-8 sm:px-5 sm:py-10">
+      <div class="mdx-content">
+        <slot />
+      </div>
+    </main>
+    <footer
+      class="border-t border-sage-200/50 py-5 text-center text-[12px] text-sage-400 dark:border-sage-800/40 dark:text-sage-600"
+    >
+      <p class="m-0 tabular-nums">© {new Date().getFullYear()} Rohan Pathare</p>
+    </footer>
+  </body>
+</html>
